@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import confetti from 'canvas-confetti';
 import './BikeRidePage.css';
+
+const EMOJIS = ['🏍️', '💨', '🌸', '✨'];
 
 export default function BikeRidePage() {
   const [showGift, setShowGift] = useState(false);
@@ -21,21 +23,35 @@ export default function BikeRidePage() {
     }
   }, [showGift]);
 
+  const emojiStyles = useMemo(
+    () =>
+      Array.from({ length: 12 }, (_, i) => ({
+        left: `${5 + Math.random() * 90}%`,
+        bottom: `${-5 - Math.random() * 10}%`,
+        animationDelay: `${Math.random() * 4}s`,
+        animationDuration: `${7 + Math.random() * 5}s`,
+        fontSize: `${18 + Math.random() * 14}px`,
+        emoji: EMOJIS[i % 4],
+      })),
+    [],
+  );
+
   return (
     <div className="slide slide--active bike-slide">
       <div className="bike-emojis" aria-hidden="true">
-        {Array.from({ length: 12 }).map((_, i) => (
+        {emojiStyles.map((s, i) => (
           <span
             key={i}
             className="bike-emoji"
             style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${5 + Math.random() * 4}s`,
-              fontSize: `${16 + Math.random() * 16}px`,
+              left: s.left,
+              bottom: s.bottom,
+              animationDelay: s.animationDelay,
+              animationDuration: s.animationDuration,
+              fontSize: s.fontSize,
             }}
           >
-            {i % 4 === 0 ? '🏍️' : i % 4 === 1 ? '💨' : i % 4 === 2 ? '🌸' : '✨'}
+            {s.emoji}
           </span>
         ))}
       </div>

@@ -5,27 +5,6 @@
   width: 100%;
 }
 
-.test-mode-bar {
-  position: fixed;
-  top: 0.75rem;
-  left: 0.75rem;
-  z-index: 60;
-  padding: 0.4rem 0.75rem;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: var(--color-text-soft);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(180, 120, 160, 0.25);
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  transition: background 0.2s, color 0.2s;
-}
-
-.test-mode-bar:hover {
-  background: #fff;
-  color: var(--color-text);
-}
 
 .slides {
   position: relative;

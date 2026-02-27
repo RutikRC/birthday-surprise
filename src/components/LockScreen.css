@@ -175,23 +175,3 @@
   margin: 0;
   font-style: italic;
 }
-
-.lock-test-btn {
-  display: block;
-  width: 100%;
-  margin-top: 1.25rem;
-  padding: 0.5rem 0.75rem;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-
-.lock-test-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.9);
-}

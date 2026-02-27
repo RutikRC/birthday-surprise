@@ -10,14 +10,9 @@ import ForgiveMePage from '../pages/ForgiveMePage';
 import BikeRidePage from '../pages/BikeRidePage';
 import './BirthdayPage.css';
 
-type BirthdayPageProps = {
-  isTestMode?: boolean;
-  onLockAgain?: () => void;
-};
-
 const TOTAL_STEPS = 8;
 
-export default function BirthdayPage({ isTestMode, onLockAgain }: BirthdayPageProps = {}) {
+export default function BirthdayPage() {
   const [step, setStep] = useState(0);
 
   const goNext = () => setStep((s) => Math.min(s + 1, TOTAL_STEPS - 1));
@@ -47,16 +42,6 @@ export default function BirthdayPage({ isTestMode, onLockAgain }: BirthdayPagePr
 
   return (
     <div className="birthday-page">
-      {isTestMode && onLockAgain && (
-        <button
-          type="button"
-          className="test-mode-bar"
-          onClick={onLockAgain}
-          aria-label="Back to lock screen"
-        >
-          ← Back to lock (testing)
-        </button>
-      )}
       <MusicToggle />
       <div className="birthday-bg">
         <div className="birthday-particles" />

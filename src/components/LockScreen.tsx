@@ -4,7 +4,7 @@ import './LockScreen.css';
 
 type TimeLeft = ReturnType<typeof useDateLock>['timeLeft'];
 
-type Props = { timeLeft: TimeLeft; onTestUnlock?: () => void };
+type Props = { timeLeft: TimeLeft };
 
 function LockIcon() {
   return (
@@ -26,7 +26,7 @@ function FloatingHeart() {
   return <span className="floating-heart" style={style}>♥</span>;
 }
 
-export default function LockScreen({ timeLeft, onTestUnlock }: Props) {
+export default function LockScreen({ timeLeft }: Props) {
   const pads = (n: number) => String(n).padStart(2, '0');
 
   return (
@@ -70,16 +70,6 @@ export default function LockScreen({ timeLeft, onTestUnlock }: Props) {
           </div>
         </div>
         <p className="lock-subtext">Some surprises are worth waiting for 🎂</p>
-        {onTestUnlock && (
-          <button
-            type="button"
-            className="lock-test-btn"
-            onClick={onTestUnlock}
-            aria-label="Preview full experience (testing)"
-          >
-            Preview everything (testing)
-          </button>
-        )}
       </div>
     </div>
   );
