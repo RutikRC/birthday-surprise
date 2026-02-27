@@ -1,0 +1,300 @@
+.birthday-page {
+  min-height: 100vh;
+  position: relative;
+  padding: 0;
+  width: 100%;
+}
+
+.test-mode-bar {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 60;
+  padding: 0.4rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(180, 120, 160, 0.25);
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s, color 0.2s;
+}
+
+.test-mode-bar:hover {
+  background: #fff;
+  color: var(--color-text);
+}
+
+.slides {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 5vw, 3rem);
+  overflow-x: hidden;
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  padding: 0.5rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-soft);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(180, 120, 160, 0.25);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-btn:hover {
+  background: #fff;
+  color: var(--color-text);
+}
+
+.nav-btn--next {
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-lavender) 100%);
+  border-color: transparent;
+}
+
+.nav-btn--next:hover {
+  filter: brightness(1.05);
+}
+
+.birthday-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    135deg,
+    #fff8fc 0%,
+    #f8f0ff 30%,
+    #fff5f9 50%,
+    #f0e8ff 70%,
+    #faf0ff 100%
+  );
+  background-size: 200% 200%;
+  animation: bgShift 12s ease-in-out infinite;
+}
+
+@keyframes bgShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.birthday-particles {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.3) 0%, transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(230, 230, 255, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(255, 218, 235, 0.2) 0%, transparent 55%);
+  animation: particlesFloat 15s ease-in-out infinite;
+}
+
+@keyframes particlesFloat {
+  0%, 100% { opacity: 1; transform: translate(0, 0); }
+  33% { opacity: 0.9; transform: translate(1%, 0.5%); }
+  66% { opacity: 1; transform: translate(-0.5%, 1%); }
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: min(1100px, 94vw);
+  width: 100%;
+  margin: 0 auto 2rem;
+  animation: sectionIn 0.6s ease-out both;
+}
+
+@keyframes sectionIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 1.6rem);
+  color: var(--color-text);
+  text-align: center;
+  margin: 0 0 1.25rem;
+}
+
+/* Hero – widened, fits viewport without scroll */
+.hero {
+  text-align: center;
+  padding: clamp(0.5rem, 4vw, 1.5rem) 0 0;
+  max-width: min(900px, 92vw);
+}
+
+.hero-logo {
+  width: clamp(120px, 25vw, 180px);
+  height: clamp(120px, 25vw, 180px);
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(200, 120, 180, 0.3);
+  box-shadow: 0 6px 28px rgba(180, 120, 160, 0.25);
+  margin: 0 auto 1rem;
+  display: block;
+  animation: logoIn 0.8s ease-out;
+}
+
+@keyframes logoIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.5vw, 3.25rem);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
+}
+
+.hero-subtext {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  line-height: 1.65;
+  color: var(--color-text-soft);
+  margin: 0 0 1.25rem;
+  max-width: min(640px, 88vw);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-lavender) 100%);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(200, 120, 180, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 24px rgba(200, 120, 180, 0.45);
+}
+
+/* Transition sections (no card, wide spread) */
+.transition-section {
+  margin-bottom: 1.5rem;
+  max-width: min(1000px, 94vw);
+  width: 100%;
+}
+
+.transition-section .section-title {
+  max-width: min(1000px, 94vw);
+}
+
+.transition-text--final .transition-word {
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+}
+
+/* Compliments */
+.compliments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.75rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.compliment-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
+  box-shadow: 0 2px 12px rgba(180, 120, 160, 0.1);
+  animation: cardPop 0.5s ease-out both;
+}
+
+@keyframes cardPop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.compliment-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(180, 120, 160, 0.18);
+}
+
+/* Final CTA */
+.final .peace-hug-btn {
+  display: block;
+  margin: 1.5rem auto 0;
+}
+
+@media (min-width: 480px) {
+  .compliments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .compliments-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
