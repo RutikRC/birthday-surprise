@@ -42,7 +42,7 @@ export default function BikeRidePage() {
 
       <div className="bike-content">
         <h2 className="bike-title">One more thing... 🎁</h2>
-        <p className="bike-subtitle">You asked for a bike ride, right?</p>
+        <p className="bike-subtitle">You asked for a bike ride, right Karishma?</p>
 
         <div className={`bike-gift ${showGift ? 'bike-gift--visible' : ''}`}>
           <div className="bike-ticket">

@@ -45,7 +45,7 @@ export default function LockScreen({ timeLeft, onTestUnlock }: Props) {
       <div className="lock-card glass">
         <LockIcon />
         <p className="lock-message">
-          Something important is waiting for you ❤️<br />
+          Something important is waiting for you, Karishma 💜😊<br />
           It unlocks on March 5 ✨
         </p>
         <div className="lock-countdown">

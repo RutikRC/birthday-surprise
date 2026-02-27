@@ -9,9 +9,9 @@ const FINAL_LINES = [
   "this can be the start of us",
   "actually being close for real.",
   "Not just as cousins,",
-  { text: "but as people who actually care about each other ❤️", strong: true },
+  { text: "but as people who actually care about each other 💜", strong: true },
   "",
-  { text: "Happy Birthday to you 🎂🎉", strong: true },
+  { text: "Happy Birthday to you, Karishma 🎂🎉", strong: true },
 ];
 
 type Props = {

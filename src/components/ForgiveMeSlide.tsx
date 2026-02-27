@@ -62,7 +62,7 @@ export default function ForgiveMeSlide({ onYes }: Props) {
   if (forgiven) {
     return (
       <div className="forgive-slide forgive-slide--done">
-        <p className="forgive-done-text">Thank you ❤️ You're the best.</p>
+        <p className="forgive-done-text">Thank you, Karishma 💜😊 You're the best.</p>
       </div>
     );
   }
