@@ -2,17 +2,16 @@ import TransitionText from '../components/TransitionText';
 import './ApologyPage.css';
 
 const LINES = [
-  "Because you're family,",
-  "and family shouldn't feel like strangers.",
-  "I don't know why we never really connected —",
-  "maybe timing, maybe just life getting in the way.",
-  "Maybe we were both too stubborn to start.",
-  "But today, on your birthday,",
-  "I just want to say…",
-  { text: "I'd like to change that.", strong: true },
-  "Let's actually start something real —",
-  "because honestly? someone like you",
+  "So today, on your birthday,",
+  "I don't want to carry that forward.",
+  "No more hurting each other quietly.",
+  "No more pretending everything's fine.",
+  { text: "Let's restart.", strong: true },
+  "Not just as cousins who exist in the same family,",
+  "but as two people who actually try.",
+  "Because honestly? someone like you",
   "is too interesting to just ignore 😏",
+  "And family shouldn't feel like strangers ✨",
 ];
 
 type Props = {

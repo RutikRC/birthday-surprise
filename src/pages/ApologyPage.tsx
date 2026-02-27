@@ -9,9 +9,9 @@ const LINES = [
   "No deep conversations,",
   "no late-night calls,",
   "maybe we never even tried to understand each other.",
-  "Just… existing in the same family",
-  "without ever really knowing each other.",
-  { text: "And that kind of bothers me.", strong: true },
+  "And somewhere along the way,",
+  "we've been hurting each other without even knowing it.",
+  { text: "That's the worst kind of hurt.", strong: true },
 ];
 
 type Props = {
